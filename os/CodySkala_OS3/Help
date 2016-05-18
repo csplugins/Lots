@@ -1,0 +1,11 @@
+BlackDos help
+boot                 Reboots the system.
+cls                  Clears the screen.
+copy file1 file2     Makes a copy of file1 to file2.
+del filename         Removes the file called filename.
+dir                  List the disk directory contents.
+echo comment         Display a comment on the screen.
+help                 Displays this help screen.
+run filename         Load and execute filename.
+tweet filename       Create a text file called filename.
+type filename        Print contents of filename.

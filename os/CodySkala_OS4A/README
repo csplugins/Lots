@@ -1,0 +1,44 @@
+Cody Skala (cws26)
+OS Project 4A Simple Linux Shell
+
+To compile and run:
+1. Navigate to the folder with the myshell.c file in a terminal
+2. To make type: make
+3. To run type: ./a.out
+================================================================================
+To use this shell:
+Linux commands should work when you see my prompt: linux (cws26)|>
+There are new commands that work as aliases to existing commands (listed below)
+This prompt should act like a normal Linux prompt.
+All functionality should be included and working as intended for this project.
+Also, a few files have been provided to test copy and deleting a file.
+These files are file1 and file2.
+================================================================================
+Functions myshell contains:
+int parseCommand(char *, struct command_t *);
+void printPrompt();
+void readCommand(char *);
+int main(int argc, char *argv[]);
+
+Functionality of myshell has compatible commands:
+C file1 file2       Copies file1 to new file file2
+D file1             Removes file called file1
+E Some message.     Prints "Some message." to screen
+H                   Displays this help page
+L                   List the contents of the current directory
+M file1             Create file file1 by launching a text editor
+P file1             Display the contents of file1 on screen
+Q                   Quit the shell
+S                   Surf the web by launching a browser in the backgrond
+W                   Clears the screen and wipes it
+X program1          Execute a program called program1
+================================================================================
+Citations:
+For the firefox command to run without printing errors to the screen and working
+in the background, a special command was need to execute since the warnings were
+from stderror instead of stdout. A graduate student named Cory showed me how to
+supress these warnings with the following command: firefox > /dev/null 2>&1 &
+
+Other than this, all work was original on this project. Everything should be
+included and work as intended. If anything is missing or needs corrected, please
+let me know so I can adjust it accordingly.

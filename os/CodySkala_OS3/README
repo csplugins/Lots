@@ -1,0 +1,43 @@
+This is Cody Skala (cws26) and here is my Operating Systems Project 3 submission.
+Everything should be included that is needed and the program should work properly.
+If anything is missing or incorrect, please let me know so I may correct it accordingly.
+----------------------------------------------------------------------------------------
+What I did for this assignment was followed the directions listed under the Description
+link from the labs page. First, I created the writeSector function to act similarly to
+readSector with slight changes. Next I made the deleteFile function to null the first
+character of the filename and remove it from the map sector if the file exists. Then I
+implemented writeFile which would make a new file with certain contents if the filename
+was not yet taken. Then next thing I did was ensure the error messaging gave correct
+results. Then nest thing I did was remove everything from kernel.c that could be used
+inside the shell.c file. After that, I made the shell function with certain commands.
+This includes boot to reboot, cls to clear screen, copy to copy contents of one file
+to another using the writeFile, del to remove a file using the deleteFile function, dir
+to list the files not starting with uppercase and shows used/free space (in sectors),
+echo to type something to screen and have it printed back to you, help to list all the
+possible commands, run to run an executable file, tweet to make a file (less than 140
+characters) with whatever contents, and type to show the contents of a file.
+
+All in all, this was a fun project and I look forward
+to the up and coming projects for this class.
+----------------------------------------------------------------------------------------
+How to verify:
+1. Navigate to the folder with all the files in a terminal window
+2. Ensure everything is loaded properly: ./compileOS.sh
+3. Run the OS: bochs -f osxterm
+4. Get a help screen of all commands: help
+5. boot
+6. cls
+7. type bigMSG
+8. copy bigMSG newMSG
+9. type newMSG
+10. dir
+11. del newMSG
+12. dir
+13. echo Some message here...
+14. run kitty
+15. run cal
+16. run fib
+17. tweet aFile
+      This is the contents of aFile
+18. type aFile
+19. Take a look at the hexdump to verify other requirements: hexdump -C floppya.img

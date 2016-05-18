@@ -1,0 +1,7 @@
+This is a very long message that will hopefully be bigger than one sector for
+the sake of testing that milti-sector file works correctly for the readFile
+function. Taking a look at the hexdump -C floppya.img, it appears that this
+file will indeed take up two sectors which is perfect for this test. I just
+need a little bit more text to make it extend into another sector. I might have
+to tell you my life story just so this can reach the next sector okay. I don't
+know how much more I will need to write

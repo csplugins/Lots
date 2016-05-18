@@ -1,0 +1,49 @@
+This is Cody Skala (cws26) and here is my Operating Systems Project 2 submission.
+Everything should be included that is needed and the program should work properly.
+If anything is missing or incorrect, please let me know so I may correct it accordingly.
+----------------------------------------------------------------------------------------
+What I did for this assignment was followed the directions listed under the Description
+link from the labs page. First, I obtained all the files from the website and ensured
+project 1 was still working for me. The second thing I did was modify the compileOS.sh
+file to help easily compile everything with the new map and directory. After this was
+all setup, I studied how the hexdump table looked and functioned. This helped with
+understanding what needed to be done with implementation into this project. The next
+piece that was completed updating the interrupt 33 for the new functions added.This
+includes readSector, readFile, runProgram, stop, and error. Reading a disk sector was
+the first function created which computes the relative sector and uses interrupt 19 to
+load the sector into a buffer. After testing the read sector functionality, I compiled
+the loadFile utility for inserting files quickly into our disk image. Next I coded the
+error function by hand but then realized that error was provided in the project page so
+I just needed to copy and paste it into the kernel.c. This gave a few more options for
+error reasons. After error function was done, the readFile function was created. This
+loaded the directory sector into a character array and checked if a specific file was
+existing or not by checking the entire directory character by character. After ensuring
+the test msg file worked correctly with this function and the file not found error, I
+created runProgram function. This function uses readFile to help put the executable in
+memory. It also requires putInMemory and launchProgram from kernel.asm. After testing
+with the test1 file, the system call was made for the busy waiting of doing nothing
+forever and was then tested with test2 file to ensure the program does not hang up.
+Finally, the fib.c was compiled and tested that it indeed works.
+
+All in all, this was a fun project
+and I look forward to the up and coming projects for this class.
+----------------------------------------------------------------------------------------
+How to verify:
+This program is very simple to verify. All that needs to be done is when in the terminal,
+navigate to this folder (CodySkala_OS1) and run the compileOS.sh with ./compileOS.sh which
+will ensure everything compiles and builds correctly. This will also place msg, test1, and
+test2 onto the disk using loafFile. Also running this command will assemble lib.asm.
+Finally, this will compile, link and place fib on disk using loadFile. A few more files
+were also loaded for testing including kitty, cal, and a custom file called bigMSG for
+testing multi-sector files. The reason I have this file do this is because the grading
+rubric specifies this (to read msg and a multi-sector file correctly).
+
+The only other thing to do is
+type into the terminal the following command: bochs -f osxterm.txt
+This should run Bochs and have my programs be read and ran. All tests can be run that need
+to be at this point and rerun with the same Bochs command.
+
+Three things should happen when starting Bochs to meet requirements for the rubric.
+1. The one-sector file msg is read correctly and displayed to the screen
+2. A multi-sector file called bigMSG is read correctly and displayed to the screen
+3. runProgram will load program at correct memory location and execute fib correctly.

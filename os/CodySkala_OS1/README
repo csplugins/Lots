@@ -1,0 +1,29 @@
+This is Cody Skala (cws26) and here is my Operating Systems Project 1 submission.
+Everything should be included that is needed and the program should work properly.
+If anything is missing or incorrect, please let me know so I may correct it accordingly.
+----------------------------------------------------------------------------------------
+What I did for this assignment was followed the directions listed under the Description
+link from the labs page. First, I obtained all the files from the website and ensured
+Bochs was working for me. The second thing I did was assemble the bootload.asm to make
+the bootload. The next thing I did was create the compileOS.sh file to help easily
+compile everything. After this was all setup, I implemented the printScreen function
+to easily put text onto the sceen for viewing. This takes use of the interrupts and not
+the C provided printing functions. The next piece that was completed was readString
+function. This takes input from the keyboard and stores what was typed to a variable.
+It also handles pressing ENTER or BACKSPACE to properly finish or remove characters
+from the input. The next thing was clearScreen function. This first will remove all the
+text currently on the screen and set a background and foreground color for any new text.
+I set my background color to red and text color to white (passed as int parameters)All
+of these functions use interrupts to get the task done as the instructions ask. Next, I
+wrote the readInt function to get a number as a character and convert it to an integer.
+Finally, I created Interrupt 33 to call the handleInterrupt function and replaced all
+the code in main to take use of this new procedure. All in all, this was a fun project
+and I look forward to the up and comming projects for this class.
+----------------------------------------------------------------------------------------
+How to verify:
+This program is very simple to veriy. All that needs to be done is when in the terminal,
+navigate to this folder (cws26_OS1) and run the compileOS.sh with ./compileOS.sh which
+will ensure everything compiles and builds correctly. The only otheer thing to do is
+type into the terminal the following command: bochs -f osxterm.txt
+This should run Bochs and have my program be loaded. All tests can be run that need to
+be at this point and rerun with the same Bochs command.
